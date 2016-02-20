@@ -11,8 +11,9 @@ module Doorkeeper
 
         def self.matches?(url, client_url)
           url, client_url = as_uri(url), as_uri(client_url)
-          #url.query = nil
-          url == client_url
+           url.query = nil
+           client_url.query = nil
+           url == client_url
         end
 
         def self.valid_for_authorization?(url, client_url)
